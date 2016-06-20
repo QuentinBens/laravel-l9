@@ -1,0 +1,52 @@
+
+/*==================================MENU HAUT==================================*/
+
+
+
+.fa-twitter-square {
+  color: #00abec;
+}
+.fa-facebook-square {
+  color: #3b5998;
+}
+.fa-linkedin-square {
+  color: #0274b3;
+}
+
+.fa-home {
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*================================FOOTER======================================*/
+
+footer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+
+}
+
+footer p {
+  font-size: 16px;
+  color: white
+
+}
+
+footer > i {
+  font-size: 35px;
+  padding: 20px
+}
