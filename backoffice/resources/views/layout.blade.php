@@ -4,27 +4,28 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>
+      @section('titrePage')
+      BackOffice
+      @show
+    </title>
+    <meta name="name" content="@section('metadesc') Meta Description de BackOffice @show">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://bootswatch.com/united/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="{{ asset('css/main.css')}}" media="screen" title="no title" charset="utf-8">
-    <style media="screen">
-      body {
-        background-image: url(/laravel_smolten_2.png);
-        background-position: 0px 80px;
+    @section('css')
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://bootswatch.com/united/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+      <link rel="stylesheet" href="{{ asset('css/main.css')}}" media="screen" title="no title" charset="utf-8">
+    @show
 
 
-      }
-    </style>
   </head>
   <body>
     <header>
@@ -32,22 +33,28 @@
     </header>
     <main>
 
+      <ol class="breadcrumb" id ="breadcrumb">
+        @section('filArianne')
+          <li><a href="{{ route('welcome') }}">Home</a></li>
+        @show
+      </ol>
+
       @section('content')
 
       @show
 
-
-
     </main>
+
     <footer>
-      <p>Copyright <i class="fa fa-copyright" aria-hidden="true"></i> <b>2016</b> QuentinBen's [Brio] </br>
-      </p>
+      @include('partial/_footer')
     </footer>
 
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  </body>
-</html>
+      @section('js')
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="{{ asset('js/main.js') }}" charset="utf-8"></script>
+      @show
+    </body>
+    </html>
