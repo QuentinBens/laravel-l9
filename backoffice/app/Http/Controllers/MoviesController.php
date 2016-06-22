@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Models\Movies;
+use Illuminate\Http\Request;
 
 /**
  * class MoviesController
@@ -32,7 +33,21 @@ class MoviesController extends Controller
   public function creer()
   {
     // interroge la BDD
-    return view('movies/creer', ['movies' => $movies]);
+    return view('movies/creer');
+  }
+
+  /**
+   * Page liste de nos films
+   * @return vue list
+   */
+  public function store(Request $request)
+  {
+    // appel de mon modéle Movies et de sa methode store
+    // je lui envoie mon objet $request
+    Movies::store($request);
+
+    // redirection vers la page index
+    return redirect()->route('movies.index');
   }
 
 
@@ -42,6 +57,7 @@ class MoviesController extends Controller
    */
   public function modifier()
   {
+
     // interroge la BDD
     return view('movies/modifier', ['movies' => $movies]);
   }
@@ -53,6 +69,7 @@ class MoviesController extends Controller
    */
   public function voir()
   {
+
     // interroge la BDD
     return view('movies/voir', ['movies' => $movies]);
   }

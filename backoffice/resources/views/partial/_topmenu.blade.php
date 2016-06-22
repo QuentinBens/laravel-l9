@@ -24,7 +24,7 @@
               <a tabindex="-1" href="#"><i class="fa fa-film" aria-hidden="true"></i> Ajout Movies</a>
               <ul class="dropdown-menu">
                 <li><a href="{{ route('movies.index') }}">Index la liste des Films</a></li>
-                <li><a href="{{ route('movies.creer') }}">Creer la liste des Films</a></li>
+                <li><a href="{{ route('movies.creer') }}">Ajouter un film</a></li>
                 <li><a href="{{ route('movies.modifier') }}">Modifier la liste des Films</a></li>
                 <li><a href="{{ route('movies.voir') }}">Voir la liste des Films</a></li>
               </ul>

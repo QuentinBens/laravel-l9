@@ -1,6 +1,8 @@
 body {
   background-image: url(/laravel_smolten_2.png);
   background-position: 0px 40px;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 
 
 }
@@ -86,11 +88,30 @@ header {
 /*==================================MAIN==================================*/
 .bgTable {
   background-color: rgba(249, 127, 40, 0.5);
+  z-index: 4;
 
 }
-.bgTable > tbody > tr {
-  word-break: break-all;
+
+.Firstname, .Lastname {
+  width: 90px;
 }
+.dob {
+  width: 100px;
+}
+.Bio {
+  width: 750px;
+}
+.act {
+  width: 80px;
+}
+.synopsis {
+  width: 750px;
+}
+.desc {
+  width: 750px;
+}
+
+
 /*=======================FOOTER======================================*/
 
 footer {
@@ -98,6 +119,7 @@ footer {
   bottom: 0px;
   width: 100%;
   text-align: center;
+  z-index: 0;
 
 }
 

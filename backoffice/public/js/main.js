@@ -10,12 +10,12 @@ $(document).ready(function(){
             $(window).scroll(function(event){
                 //Sets the current scroll position
                 var st = $(this).scrollTop();
-
+                console.log(st);
                 //Determines up-or-down scrolling
-                if (st > lastScroll){
-                  $(".footer").css("display",'inline')
+                if (st == lastScroll){
+                  $(".footer").css("display",'show')
                 }
-                if(st == 0){
+                else if(st >= 0){
                   $(".footer").css("display",'none')
                 }
                 //Updates scroll position

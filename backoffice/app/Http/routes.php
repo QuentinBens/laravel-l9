@@ -60,6 +60,7 @@ Route::group(['prefix' => 'movies'], function(){
       // Route en Get
       Route::get('/index', ['as' => 'movies.index', 'uses' => 'MoviesController@index']);
       Route::get('/creer', ['as' => 'movies.creer', 'uses' => 'MoviesController@creer']);
+      Route::post('/store', ['as' => 'movies.store', 'uses' => 'MoviesController@store']);
       Route::get('/modifier', ['as' => 'movies.modifier', 'uses' => 'MoviesController@modifier']);
       Route::get('/voir', ['as' => 'movies.voir', 'uses' => 'MoviesController@voir']);
 
