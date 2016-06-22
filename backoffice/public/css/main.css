@@ -87,8 +87,10 @@ header {
 
 /*==================================MAIN==================================*/
 .bgTable {
-  background-color: rgba(249, 127, 40, 0.5);
+  background-color: rgba(68,110,155, 0.5);
   z-index: 4;
+  color: black;
+  font-size: 18px;
 
 }
 

@@ -21,7 +21,7 @@
     @section('css')
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="https://bootswatch.com/united/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+      <link rel="stylesheet" href="https://bootswatch.com/spacelab/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
       <link rel="stylesheet" href="{{ asset('css/main.css')}}" media="screen" title="no title" charset="utf-8">
     @show
 

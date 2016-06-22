@@ -1,4 +1,4 @@
- class ="title"@extends('layout')
+@extends('layout')
 
 @section('filArianne')
   @parent

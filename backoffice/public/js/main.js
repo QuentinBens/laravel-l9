@@ -9,14 +9,16 @@ $(document).ready(function(){
             var lastScroll = 0;
             $(window).scroll(function(event){
                 //Sets the current scroll position
+                console.log($(document).height());
+                console.log($(document).scrollHeight);
                 var st = $(this).scrollTop();
                 console.log(st);
                 //Determines up-or-down scrolling
-                if (st == lastScroll){
-                  $(".footer").css("display",'show')
+                if (st == 0){
+                  $(".footer").fadeIn( "slow" );
                 }
-                else if(st >= 0){
-                  $(".footer").css("display",'none')
+                else{
+                  $(".footer").fadeOut( "slow" );
                 }
                 //Updates scroll position
                 lastScroll = st;
