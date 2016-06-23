@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Models\Acteurs;
+use Illuminate\Http\Request;
+use \Validator;
+
 /**
  * class ActeursController
  */
@@ -31,8 +34,24 @@ class ActeursController extends Controller
  public function creer()
  {
    // interroge la BDD
-   return view('acteurs/creer', ['acteurs' => $acteurs]);
+   return view('acteurs/creer');
  }
+
+ /**
+  * Ajouter un acteur
+  * @return vue list
+  */
+ public function store(Request $request)
+ {
+
+   // appel de mon modéle Movies et de sa methode store
+   // je lui envoie mon objet $request
+   Acteurs::store($request);
+
+   // redirection vers la page index
+   return redirect()->route('acteurs.index');
+ }
+
 
 
  /**

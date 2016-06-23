@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Models\Realisateurs;
+use Illuminate\Http\Request;
+
 /**
  * class ActeursController
  */
@@ -31,7 +33,22 @@ class RealisateursController extends Controller
  public function creer()
  {
    // interroge la BDD
-   return view('realisateurs/creer', ['realisateurs' => $realisateurs]);
+   return view('realisateurs/creer');
+ }
+
+
+ /**
+  * Page liste de nos films
+  * @return vue list
+  */
+ public function store(Request $request)
+ {
+
+   Realisateurs::store($request);
+
+   // redirection vers la page index
+   return redirect()->route('realisateurs.index');
+
  }
 
 

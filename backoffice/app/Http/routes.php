@@ -75,6 +75,7 @@ Route::group(['prefix' => 'categories'], function(){
       // Route en Get
       Route::get('/index', ['as' => 'categories.index', 'uses' => 'CategoriesController@index']);
       Route::get('/creer', ['as' => 'categories.creer', 'uses' => 'CategoriesController@creer']);
+      Route::post('/store', ['as' => 'categories.store', 'uses' => 'CategoriesController@store']);
       Route::get('/modifier', ['as' => 'categories.modifier', 'uses' => 'CategoriesController@modifier']);
       Route::get('/voir', ['as' => 'categories.voir', 'uses' => 'CategoriesController@voir']);
 
@@ -88,6 +89,7 @@ Route::group(['prefix' => 'realisateurs'], function(){
       // Route en Get
       Route::get('/index', ['as' => 'realisateurs.index', 'uses' => 'RealisateursController@index']);
       Route::get('/creer', ['as' => 'realisateurs.creer', 'uses' => 'RealisateursController@creer']);
+      Route::post('/store', ['as' => 'realisateurs.store', 'uses' => 'RealisateursController@store']);
       Route::get('/modifier', ['as' => 'realisateurs.modifier', 'uses' => 'RealisateursController@modifier']);
       Route::get('/voir', ['as' => 'realisateurs.voir', 'uses' => 'RealisateursController@voir']);
 
@@ -99,6 +101,7 @@ Route::group(['prefix' => 'acteurs'], function(){
       // Route en Get
       Route::get('/index', ['as' => 'acteurs.index', 'uses' => 'ActeursController@index']);
       Route::get('/creer', ['as' => 'acteurs.creer', 'uses' => 'ActeursController@creer']);
+      Route::post('/store', ['as' => 'acteurs.store', 'uses' => 'ActeursController@store']);
       Route::get('/modifier', ['as' => 'acteurs.modifier', 'uses' => 'ActeursController@modifier']);
       Route::get('/voir', ['as' => 'acteurs.voir', 'uses' => 'ActeursController@voir']);
 

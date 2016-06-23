@@ -3,6 +3,8 @@ namespace App\Http\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use DB;
+use Illuminate\Http\Request;
+
 
 /**
  * Model Movies
@@ -22,6 +24,21 @@ class Categories extends Model
 
     return $resultat;
   }
-}
+
+
+  /**
+   * Methode qui enregistre dans ma DB
+   * @return [type] [description]
+   */
+  public static function store(Request $request){
+    DB::table('categories')->insert(
+      [
+        'title' => $request->titre,
+        'description' =>$request->description,
+        'image' =>$request->image,
+      ]
+    );
+  }
+  }
 
  ?>

@@ -3,6 +3,8 @@ namespace App\Http\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use DB;
+use Illuminate\Http\Request;
+
 
 /**
  * Model Movies
@@ -21,6 +23,24 @@ class Realisateurs extends Model
     $resultat = DB::table('directors')->get();
 
     return $resultat;
+  }
+
+
+  /**
+   * Methode qui enregistre dans ma DB
+   * @return [type] [description]
+   */
+  public static function store(Request $request){
+    DB::table('directors')->insert(
+      [
+        'firstname' => $request->firstname,
+        'lastname' =>$request->lastname,
+        'dob' =>$request->dob,
+        'biography' =>$request->biography,
+        'image' =>$request->image,
+        'note' =>$request->note,
+      ]
+    );
   }
 }
 

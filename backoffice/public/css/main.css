@@ -98,7 +98,7 @@ header {
   width: 90px;
 }
 .dob {
-  width: 100px;
+  width: 120px;
 }
 .Bio {
   width: 750px;
@@ -115,20 +115,28 @@ header {
 
 
 /*=======================FOOTER======================================*/
-
+body {
+  padding-bottom: 40px;
+}
 footer {
   position: fixed;
   bottom: 0px;
   width: 100%;
   text-align: center;
-  z-index: 0;
 
 }
-
+footer > div {
+  background-color: rgba(255, 254, 254, 0.8);;
+  width: 100%;
+  padding-top: 5px;
+  margin: 0 auto;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+}
 footer div > p {
   font-size: 16px;
-  color: white
-
+  color: black;
+  margin-bottom: 0px;
 }
 
 footer > div > ul > li {
@@ -136,5 +144,6 @@ footer > div > ul > li {
 }
 footer > div > ul {
   padding: 0px;
+  margin: 0px;
 
 }

@@ -33,7 +33,7 @@
               <a tabindex="-1" href="#"><i class="fa fa-bookmark" aria-hidden="true"></i> Ajout Categories</a>
               <ul class="dropdown-menu">
                 <li><a href="{{ route('categories.index') }}">Index la liste des Categories</a></li>
-                <li><a href="{{ route('categories.creer') }}">Creer la liste des Categories</a></li>
+                <li><a href="{{ route('categories.creer') }}">Ajouter une Categorie</a></li>
                 <li><a href="{{ route('categories.modifier') }}">Modifier la liste des Categories</a></li>
                 <li><a href="{{ route('categories.voir') }}">Voir la liste des Categories</a></li>
               </ul>
@@ -42,7 +42,7 @@
               <a tabindex="-1" href="#"><i class="fa fa-video-camera" aria-hidden="true"></i> Ajout Réalisateur</a>
               <ul class="dropdown-menu">
                 <li><a href="{{ route('realisateurs.index') }}">Index la liste des Réalisateur</a></li>
-                <li><a href="{{ route('realisateurs.creer') }}">Creer la liste des Réalisateur</a></li>
+                <li><a href="{{ route('realisateurs.creer') }}">Ajouter un Réalisateur</a></li>
                 <li><a href="{{ route('realisateurs.modifier') }}">Modifier la liste des Réalisateur</a></li>
                 <li><a href="{{ route('realisateurs.voir') }}">Voir la liste des Réalisateur</a></li>
               </ul>
@@ -51,13 +51,12 @@
               <a tabindex="-1" href="#"><i class="fa fa-star" aria-hidden="true"></i> Ajout Acteurs</a>
               <ul class="dropdown-menu">
                 <li><a href="{{ route('acteurs.index') }}">Index la liste des Acteurs</a></li>
-                <li><a href="{{ route('acteurs.creer') }}">Creer la liste des Acteurs</a></li>
+                <li><a href="{{ route('acteurs.creer') }}">Ajouter un Acteur</a></li>
                 <li><a href="{{ route('acteurs.modifier') }}">Modifier la liste des Acteurs</a></li>
                 <li><a href="{{ route('acteurs.voir') }}">Voir la liste des Acteurs</a></li>
               </ul>
             </li>
             <li><a href="#"><i class="fa fa-cogs" aria-hidden="true"></i> Ajout Avancée</a></li>
-            <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
           </ul>
         </li>
       </ul>
@@ -68,8 +67,8 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-
         <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
+        <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>        
       </ul>
     </div>
   </div>

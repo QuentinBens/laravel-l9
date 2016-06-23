@@ -20,6 +20,7 @@
               <tr class="active">
                 <th class ="id">ID's</th>
                 <th class ="title">Titres</th>
+                <th class ="img">Images</th>
                 <th class ="desc">Description</th>
                 <th class ="act">Actions</th>
               </tr>
@@ -30,6 +31,7 @@
               <tr>
                 <td class ="id">{{$element->id}}</td>
                 <td class ="title">{{$element->title}}</td>
+                <td class ="img"> <img src="{{$element->image}}" height="120px" width="80px"/> </td>
                 <td class ="desc">{{ strip_tags(str_limit($element->description, 300)) }}</td>
                 <td class ="act">
                     <a href="#"><span class="label label-info">Créer</span></a>

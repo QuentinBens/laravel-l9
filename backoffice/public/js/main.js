@@ -4,13 +4,14 @@ $(document).ready(function(){
 
   $('.dropdown-toggle').dropdown();
 
+
+  $('[data-toggle="popover"]').popover('show').css('display','block');
+
   $(function(){
             //Keep track of last scroll
             var lastScroll = 0;
             $(window).scroll(function(event){
                 //Sets the current scroll position
-                console.log($(document).height());
-                console.log($(document).scrollHeight);
                 var st = $(this).scrollTop();
                 console.log(st);
                 //Determines up-or-down scrolling
@@ -24,4 +25,5 @@ $(document).ready(function(){
                 lastScroll = st;
             });
           });
+
 })// fin de document ready

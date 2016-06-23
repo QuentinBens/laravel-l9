@@ -12,9 +12,17 @@
         <div class="col-md-12">
             <h1 class="text-primary">Liste de Film</h1>
         </div>
+
+
+
       </div>
       <div class="row">
         <div class="col-md-12">  ​
+          @if (session('success'))
+            <div class="alert alert-success">
+              {{ session('success') }}
+            </div>
+          @endif
           <table class="table table-hover bgTable">
             <thead>
               <tr class="active">

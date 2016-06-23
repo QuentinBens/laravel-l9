@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Models\Movies;
 use Illuminate\Http\Request;
+use Validator;
 
 /**
  * class MoviesController
@@ -42,12 +43,28 @@ class MoviesController extends Controller
    */
   public function store(Request $request)
   {
+    $validator = Validator::make($request->all(),
+      [
+        'titre' => 'required|unique:movies,title|min:3|max:255',
+
+      ]
+    );
+    if($validator->fails()) {
+      // redirection
+      return redirect()->route('movies.creer')
+                    ->withErrors($validator)// message d'erreur
+                    ->withInput(); // remplissage de nos champs
+    }
+
+
     // appel de mon modéle Movies et de sa methode store
     // je lui envoie mon objet $request
     Movies::store($request);
 
     // redirection vers la page index
-    return redirect()->route('movies.index');
+    return redirect()
+    ->route('movies.index')
+    ->with('success', 'Votre film a bien été créée');
   }
 
 

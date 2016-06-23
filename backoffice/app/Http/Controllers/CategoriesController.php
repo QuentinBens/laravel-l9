@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Models\Categories;
+use Illuminate\Http\Request;
+
 
 /**
  * class CategoriesController
@@ -32,9 +34,22 @@ class CategoriesController extends Controller
    public function creer()
    {
      // interroge la BDD
-     return view('categories/creer', ['categories' => $categories]);
+     return view('categories/creer');
    }
 
+   /**
+    * Page liste de nos films
+    * @return vue list
+    */
+   public function store(Request $request)
+   {
+
+     Categories::store($request);
+
+     // redirection vers la page index
+     return redirect()->route('categories.index');
+
+   }
 
    /**
     * Page liste de nos films

@@ -55,6 +55,7 @@
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script src="{{ asset('js/main.js') }}" charset="utf-8"></script>
+        <script src="{{ asset('js/garand-sticky/jquery.sticky.js') }}" charset="utf-8"></script>
       @show
     </body>
     </html>
