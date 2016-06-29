@@ -42,6 +42,12 @@ class Realisateurs extends Model
       ]
     );
   }
+
+  public static function deleteRealisateurs($id){
+    DB::table('directors')
+      ->where('id', $id)
+      ->delete();
+  }
 }
 
  ?>

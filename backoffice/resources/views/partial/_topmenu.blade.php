@@ -60,15 +60,15 @@
           </ul>
         </li>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
+      <form class="navbar-form navbar-left" role="search" action="{{ route('movies.search') }}" method="get">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+          <input type="text" name="search" class="form-control" placeholder="Search">
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" name="button" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
-        <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>        
+        <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
       </ul>
     </div>
   </div>

@@ -73,6 +73,16 @@ class RealisateursController extends Controller
    return view('realisateurs/voir', ['realisateurs' => $realisateurs]);
  }
 
+ public function delete($id)
+ {
+   Realisateurs::deleteRealisateurs($id);
+
+   return redirect()
+     ->route('realisateurs.index')
+     ->with('success', 'Votre film a bien été supprimé');
+
+ }
+
 
 
 }// fin RealisateursController

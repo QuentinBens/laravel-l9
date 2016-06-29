@@ -72,6 +72,15 @@ class CategoriesController extends Controller
      return view('categories/voir', ['categories' => $categories]);
    }
 
+   public function delete($id)
+   {
+     Categories::deleteCategories($id);
+
+     return redirect()
+       ->route('categories.index')
+       ->with('success', 'Votre film a bien été supprimé');
+
+   }
 
 
  }// fin CategoriesController

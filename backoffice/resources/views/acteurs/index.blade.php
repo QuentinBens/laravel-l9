@@ -39,7 +39,9 @@
               <td class ="act">
                   <a href="#"><span class="label label-info">Créer</span></a>
                   <a href="#"><span class="label label-success">Voir</span></a>
-                  <a href="#"><span class="label label-danger">Supprimer</span></a>
+                  <a href="{{ route('acteurs.delete', [
+                      'id' => $element->id,
+                      ]) }}" onclick="return confirm('Etes vous sûre de vouloir supprimer ce film ?');"><span class="label label-danger">Supprimer</span></a>
               </td>
             </tr>
             @endforeach

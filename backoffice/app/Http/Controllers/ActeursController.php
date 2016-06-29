@@ -75,7 +75,15 @@ class ActeursController extends Controller
    return view('acteurs/voir', ['acteurs' => $acteurs]);
  }
 
+ public function delete($id)
+ {
+   Acteurs::deleteActeurs($id);
 
+   return redirect()
+     ->route('acteurs.index')
+     ->with('success', 'Votre film a bien été supprimé');
+
+ }
 
 }// fin ActeursController
 ?>

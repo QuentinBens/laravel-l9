@@ -42,6 +42,13 @@ class Acteurs extends Model
       ]
     );
   }
+
+  public static function deleteActeurs($id){
+    DB::table('actors')
+      ->where('id', $id)
+      ->delete();
+  }
+
 }
 
  ?>

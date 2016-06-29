@@ -5,7 +5,6 @@
   <li class="active"><a href="{{ route('movies.index') }}">Liste de films</a></li>
 @endsection
 
-@section('content')
   @section('content')
     <div class="container">
       <div class="row">
@@ -42,9 +41,46 @@
                 <td class ="img"> <img src="{{$element->image}}" height="120px" width="80px"/> </td>
                 <td class ="synopsis">{{ strip_tags(str_limit($element->synopsis, 300)) }}</td>
                 <td class ="edit">
-                    <a href="#"><span class="label label-info">Créer</span></a>
+                    <a href="#"><span class="label label-info">Modifier</span></a>
                     <a href="#"><span class="label label-success">Voir</span></a>
-                    <a href="#"><span class="label label-danger">Supprimer</span></a>
+                    <a href="{{ route('movies.delete', [
+                        'id' => $element->id,
+                        ]) }}" onclick="return confirm('Etes vous sûre de vouloir supprimer ce film ?');"><span class="label label-danger">Supprimer</span></a>
+                    @if (!in_array($element->id, session('likes', [])))
+                      <a href="{{ route('movies.aimer', [
+                        'id' => $element->id,
+                        'action' => 'like'
+                        ]) }}"><span class='fa fa-heart-o'></span></a>
+                    @else
+                      <a href="{{ route('movies.aimer', [
+                        'id' => $element->id,
+                        'action' => 'dislike'
+                        ]) }}"><span class='fa fa-heart'></span></a>
+                    @endif
+                    @if ($element->visible == 1)
+                      <a href="{{ route('movies.visibility', [
+                        'id' => $element->id,
+                        'visibility' => '0'
+                        ]) }}"><span class="fa fa-eye" class="btn"></span></a>
+                    @else
+                      <a href="{{ route('movies.visibility', [
+                        'id' => $element->id,
+                        'visibility' => '1'
+                        ]) }}"><span class="fa fa-eye-slash" class="btn"></span></a>
+                    @endif
+
+                    @if ($element->cover == 1)
+                      <a href="{{ route('movies.cover', [
+                        'id' => $element->id,
+                        'cover' => '0'
+                        ]) }}"><span class="fa fa-circle-o" class="btn"></span></a>
+                    @else
+                      <a href="{{ route('movies.cover', [
+                        'id' => $element->id,
+                        'cover' => '1'
+                        ]) }}"><span class="fa fa-circle" class="btn"></span></a>
+                    @endif
+
                 </td>
               </tr>
               @endforeach

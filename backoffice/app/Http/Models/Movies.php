@@ -45,6 +45,41 @@ class Movies extends Model
       ]
     );
   }
+
+  public static function deleteMovies($id){
+    DB::table('movies')
+      ->where('id', $id)
+      ->delete();
+  }
+
+  public static function updateVisible($id, $visible){
+
+    return DB::table('movies')
+      ->where('id', $id)
+      ->update(['visible' => $visible]);
+
+  }
+
+  public static function updateCover($id, $cover){
+
+    return DB::table('movies')
+      ->where('id', $id)
+      ->update(['cover' => $cover]);
+
+  }
+
+  public static function search($word = ""){
+
+    $req = DB::table('movies')
+            ->where('title','like', '%'.$word.'%')
+            ->get();
+
+    return $req;
+  }
+
+
+
+
 }
 
  ?>

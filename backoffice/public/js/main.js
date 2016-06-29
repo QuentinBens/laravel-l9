@@ -5,7 +5,7 @@ $(document).ready(function(){
   $('.dropdown-toggle').dropdown();
 
 
-  $('[data-toggle="popover"]').popover('show').css('display','block');
+  $('[data-toggle="popover"]').popover('show');
 
   $(function(){
             //Keep track of last scroll

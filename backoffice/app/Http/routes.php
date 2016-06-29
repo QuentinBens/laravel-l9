@@ -63,6 +63,15 @@ Route::group(['prefix' => 'movies'], function(){
       Route::post('/store', ['as' => 'movies.store', 'uses' => 'MoviesController@store']);
       Route::get('/modifier', ['as' => 'movies.modifier', 'uses' => 'MoviesController@modifier']);
       Route::get('/voir', ['as' => 'movies.voir', 'uses' => 'MoviesController@voir']);
+      Route::get('/aimer-film/{id}/{action}', ['as' => 'movies.aimer', 'uses' => 'MoviesController@like']);
+      Route::get('/visibility/{id}/{visibility}', ['as' => 'movies.visibility', 'uses' => 'MoviesController@visibility']);
+      Route::get('/cover-movies/{id}/{cover}', ['as' => 'movies.cover', 'uses' => 'MoviesController@cover']);
+      Route::get('/delete/{id}', ['as' => 'movies.delete', 'uses' => 'MoviesController@delete']);
+      Route::get('/search', ['as' => 'movies.search', 'uses' => 'MoviesController@search']);
+
+      Route::get('/voir', ['as' => 'movies.voir', function () {
+        return view('movies/voir');
+      }]);
 
 
   });// FIn de group
@@ -78,6 +87,8 @@ Route::group(['prefix' => 'categories'], function(){
       Route::post('/store', ['as' => 'categories.store', 'uses' => 'CategoriesController@store']);
       Route::get('/modifier', ['as' => 'categories.modifier', 'uses' => 'CategoriesController@modifier']);
       Route::get('/voir', ['as' => 'categories.voir', 'uses' => 'CategoriesController@voir']);
+      Route::get('/delete/{id}', ['as' => 'categories.delete', 'uses' => 'CategoriesController@delete']);
+
 
   });// FIn de group
 
@@ -92,6 +103,7 @@ Route::group(['prefix' => 'realisateurs'], function(){
       Route::post('/store', ['as' => 'realisateurs.store', 'uses' => 'RealisateursController@store']);
       Route::get('/modifier', ['as' => 'realisateurs.modifier', 'uses' => 'RealisateursController@modifier']);
       Route::get('/voir', ['as' => 'realisateurs.voir', 'uses' => 'RealisateursController@voir']);
+      Route::get('/delete/{id}', ['as' => 'realisateurs.delete', 'uses' => 'RealisateursController@delete']);
 
   });// FIn de group
 
@@ -104,5 +116,6 @@ Route::group(['prefix' => 'acteurs'], function(){
       Route::post('/store', ['as' => 'acteurs.store', 'uses' => 'ActeursController@store']);
       Route::get('/modifier', ['as' => 'acteurs.modifier', 'uses' => 'ActeursController@modifier']);
       Route::get('/voir', ['as' => 'acteurs.voir', 'uses' => 'ActeursController@voir']);
+      Route::get('/delete/{id}', ['as' => 'acteurs.delete', 'uses' => 'ActeursController@delete']);
 
 });// FIn de group

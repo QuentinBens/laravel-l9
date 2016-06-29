@@ -39,6 +39,15 @@ class Categories extends Model
       ]
     );
   }
+
+  public static function deleteCategories($id){
+    DB::table('categories')
+      ->where('id', $id)
+      ->delete();
+  }
+
+
+
   }
 
  ?>

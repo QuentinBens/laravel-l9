@@ -27,11 +27,8 @@
               <div class="form-group">
               <label for="inputTitre" class="col-lg-2 control-label">Titre</label>
                 <div class="col-lg-10">
-                  <input type="text" data-toggle="popover" data-placement="right" data-content= "
-                  @if ($errors->has('titre'))
-                    {{ $errors->first("titre") }}
-                  @endif
-                 " class="form-control"  style="display:none" name="titre" id="inputTitre" placeholder="Titre"></div>
+                  <input type="text" class="form-control"  name="titre" value="sqlkjhdfùlmqsdjf" id="inputTitre" placeholder="Titre">
+                </div>
               </div>
               <div class="form-group">
                 <label for="textSynopsis" class="col-lg-2 control-label">Synopsis</label>
