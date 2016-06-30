@@ -48,6 +48,7 @@ class MoviesController extends Controller
     $validator = Validator::make($request->all(),
       [
         'titre' => 'required|unique:movies,title|min:3|max:255',
+        'image' => 'image',
 
       ]
     );
@@ -58,10 +59,24 @@ class MoviesController extends Controller
                     ->withInput(); // remplissage de nos champs
     }
 
+    $filesName = "";
 
+    if($request->hasFile('image')) {
+      //  si dans ma requete il y  a un fichier dont le name en formulaire est 'image'
+
+      $file = $request->file('image');
+
+      // recupere le nom original du fichier
+      $filesName = $file->getClientOriginalName();
+
+      $destinationPath = public_path().'/uploads/movies'; // Indique le lieu du stockage
+
+      // Deplace le fichier vers la destination voulu
+      $file->move($destinationPath, $filesName);
+    }
     // appel de mon modéle Movies et de sa methode store
     // je lui envoie mon objet $request
-    Movies::store($request);
+    Movies::store($request, $filesName);
 
     // redirection vers la page index
     return redirect()

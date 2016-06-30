@@ -68,7 +68,7 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
-        <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+        <li><a href="{{ url('/logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
       </ul>
     </div>
   </div>

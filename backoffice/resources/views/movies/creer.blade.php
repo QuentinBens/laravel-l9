@@ -19,7 +19,7 @@
             <h3 class="panel-title">Créer un film</h3>
           </div>
           <div class="panel-body">
-            <form class="form-horizontal" action="{{ route('movies.store') }}" method="post">
+            <form enctype="multipart/form-data" class="form-horizontal" action="{{ route('movies.store') }}" method="post">
               {{ csrf_field() }}
               @foreach ($errors->all() as $element)
                 <div class="alert alert-danger alert-dismissible">{{ $element }}</div>
@@ -27,7 +27,7 @@
               <div class="form-group">
               <label for="inputTitre" class="col-lg-2 control-label">Titre</label>
                 <div class="col-lg-10">
-                  <input type="text" class="form-control"  name="titre" value="sqlkjhdfùlmqsdjf" id="inputTitre" placeholder="Titre">
+                  <input type="text" class="form-control"  name="titre" value="" id="inputTitre" placeholder="Titre">
                 </div>
               </div>
               <div class="form-group">
@@ -47,7 +47,7 @@
               <div class="form-group">
                 <label for="inputImg" class="col-lg-2 control-label">Image</label>
                 <div class="col-lg-10">
-                  <input class="form-control" name="image" id="inputImg" placeholder="Lien Image">
+                  <input class="form-control" accept="image/*" type="file" name="image" id="inputImg" placeholder="">
                 </div>
               </div>
               <div class="form-group">

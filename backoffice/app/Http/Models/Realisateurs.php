@@ -30,14 +30,14 @@ class Realisateurs extends Model
    * Methode qui enregistre dans ma DB
    * @return [type] [description]
    */
-  public static function store(Request $request){
+  public static function store(Request $request, $filesName){
     DB::table('directors')->insert(
       [
         'firstname' => $request->firstname,
         'lastname' =>$request->lastname,
         'dob' =>$request->dob,
         'biography' =>$request->biography,
-        'image' =>$request->image,
+        'image' => asset('uploads/realisateurs/'.$filesName),
         'note' =>$request->note,
       ]
     );

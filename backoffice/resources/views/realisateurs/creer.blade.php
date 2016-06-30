@@ -14,8 +14,11 @@
             <h3 class="panel-title">Créer un Réalisateurs</h3>
           </div>
           <div class="panel-body">
-            <form class="form-horizontal" action="{{ route('realisateurs.store') }}" method="post">
+            <form class="form-horizontal" enctype="multipart/form-data" action="{{ route('realisateurs.store') }}" method="post">
               {{ csrf_field() }}
+              @foreach ($errors->all() as $element)
+                <div class="alert alert-danger alert-dismissible">{{ $element }}</div>
+              @endforeach
               <div class="form-group">
               <label for="inputFirstname" class="col-lg-2 control-label">Firstname</label>
                 <div class="col-lg-10">
@@ -44,7 +47,7 @@
               <div class="form-group">
                 <label for="inputImg" class="col-lg-2 control-label">Image</label>
                 <div class="col-lg-10">
-                  <input class="form-control" name="image" id="inputImg" placeholder="Lien Image">
+                  <input class="form-control" type="file" name="image" accept="image/*" id="inputImg" >
                 </div>
               </div>
               <div class="form-group">

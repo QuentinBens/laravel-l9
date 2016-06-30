@@ -10,11 +10,11 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
 Route::get('/', ['as' =>'welcome', function () {
     return view('welcome');
 }]);
 
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
 // Route::get permet de créer une Route en get
 // 1er parametre c'est l'URL
@@ -119,3 +119,8 @@ Route::group(['prefix' => 'acteurs'], function(){
       Route::get('/delete/{id}', ['as' => 'acteurs.delete', 'uses' => 'ActeursController@delete']);
 
 });// FIn de group
+}); // route groupauth
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

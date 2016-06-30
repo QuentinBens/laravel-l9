@@ -29,19 +29,19 @@ class Movies extends Model
    * Methode qui enregistre dans ma DB
    * @return [type] [description]
    */
-  public static function store(Request $request){
+  public static function store(Request $request, $filesName){
     DB::table('movies')->insert(
       [
         'title' => $request->titre,
         'synopsis' =>$request->synopsis,
         'description' =>$request->description,
-        'image' =>$request->image,
         'trailer' =>$request->trailer,
         'date_release' =>$request->daterelease,
         'duree' =>$request->duree,
         'budget' =>$request->budget,
         'bo' =>$request->bo,
         'languages' =>$request->languages,
+        'image' => asset('uploads/movies/'.$filesName),
       ]
     );
   }
